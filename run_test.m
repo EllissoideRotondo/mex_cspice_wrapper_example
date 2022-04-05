@@ -1,3 +1,7 @@
+% Author: Alex Pascarella
+% Affiliation: University of Illinois Urbana-Champaign
+% Date created: 04/05/2022
+
 % Clear environment
 clc; clear
 addpath('./wrappers');

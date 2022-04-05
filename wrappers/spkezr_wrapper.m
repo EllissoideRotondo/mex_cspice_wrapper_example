@@ -1,3 +1,7 @@
+% Author: Alex Pascarella
+% Affiliation: University of Illinois Urbana-Champaign
+% Date created: 04/05/2022
+
 function [starg, lt] = spkezr_wrapper(varargin) %#codegen
     
     % Include C files required for code generation 

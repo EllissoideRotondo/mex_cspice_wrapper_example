@@ -1,3 +1,7 @@
+% Author: Alex Pascarella
+% Affiliation: University of Illinois Urbana-Champaign
+% Date created: 04/05/2022
+
 % Generate code
 addpath('./wrappers')
 str = coder.newtype('char', [1 Inf], [0 1]);
