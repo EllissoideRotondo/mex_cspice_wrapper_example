@@ -61,7 +61,7 @@ disp('First part completed succesfully')
 disp('Showing error behavior now. Matlab will NOT crash')
 pause(0.5)
 try
-    [~, ~] = spkezr('random string');
+    [~, ~] = spkezr_c('random string');
 catch ME
     warning(ME.message)
 end
