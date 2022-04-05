@@ -16,88 +16,88 @@
 
 // Variable Definitions
 static emlrtMCInfo emlrtMCI{
-    45,                // lineNo
+    54,                // lineNo
     9,                 // colNo
     "spkezr_wrapper1", // fName
-    "C:\\Users\\alexp\\Documents\\spice_wrapper_example\\wrappers\\spkezr_"
-    "wrapper.m" // pName
+    "C:\\Users\\alexp\\Documents\\GitHub\\mex_cspice_wrapper_"
+    "example\\wrappers\\spkezr_wrapper.m" // pName
 };
 
 static emlrtMCInfo b_emlrtMCI{
-    45,                // lineNo
+    54,                // lineNo
     9,                 // colNo
     "spkezr_wrapper2", // fName
-    "C:\\Users\\alexp\\Documents\\spice_wrapper_example\\wrappers\\spkezr_"
-    "wrapper.m" // pName
+    "C:\\Users\\alexp\\Documents\\GitHub\\mex_cspice_wrapper_"
+    "example\\wrappers\\spkezr_wrapper.m" // pName
 };
 
 static emlrtMCInfo c_emlrtMCI{
-    45,                // lineNo
+    54,                // lineNo
     9,                 // colNo
     "spkezr_wrapper3", // fName
-    "C:\\Users\\alexp\\Documents\\spice_wrapper_example\\wrappers\\spkezr_"
-    "wrapper.m" // pName
+    "C:\\Users\\alexp\\Documents\\GitHub\\mex_cspice_wrapper_"
+    "example\\wrappers\\spkezr_wrapper.m" // pName
 };
 
 static emlrtRTEInfo emlrtRTEI{
-    30,               // lineNo
+    29,               // lineNo
     33,               // colNo
     "spkezr_wrapper", // fName
-    "C:\\Users\\alexp\\Documents\\spice_wrapper_example\\wrappers\\spkezr_"
-    "wrapper.m" // pName
+    "C:\\Users\\alexp\\Documents\\GitHub\\mex_cspice_wrapper_"
+    "example\\wrappers\\spkezr_wrapper.m" // pName
 };
 
 static emlrtRTEInfo b_emlrtRTEI{
-    30,               // lineNo
+    29,               // lineNo
     47,               // colNo
     "spkezr_wrapper", // fName
-    "C:\\Users\\alexp\\Documents\\spice_wrapper_example\\wrappers\\spkezr_"
-    "wrapper.m" // pName
+    "C:\\Users\\alexp\\Documents\\GitHub\\mex_cspice_wrapper_"
+    "example\\wrappers\\spkezr_wrapper.m" // pName
 };
 
 static emlrtRTEInfo c_emlrtRTEI{
-    30,               // lineNo
+    29,               // lineNo
     56,               // colNo
     "spkezr_wrapper", // fName
-    "C:\\Users\\alexp\\Documents\\spice_wrapper_example\\wrappers\\spkezr_"
-    "wrapper.m" // pName
+    "C:\\Users\\alexp\\Documents\\GitHub\\mex_cspice_wrapper_"
+    "example\\wrappers\\spkezr_wrapper.m" // pName
 };
 
 static emlrtRTEInfo d_emlrtRTEI{
-    30,               // lineNo
+    29,               // lineNo
     68,               // colNo
     "spkezr_wrapper", // fName
-    "C:\\Users\\alexp\\Documents\\spice_wrapper_example\\wrappers\\spkezr_"
-    "wrapper.m" // pName
+    "C:\\Users\\alexp\\Documents\\GitHub\\mex_cspice_wrapper_"
+    "example\\wrappers\\spkezr_wrapper.m" // pName
 };
 
 static emlrtRTEInfo e_emlrtRTEI{
-    32,               // lineNo
+    37,               // lineNo
     9,                // colNo
     "spkezr_wrapper", // fName
-    "C:\\Users\\alexp\\Documents\\spice_wrapper_example\\wrappers\\spkezr_"
-    "wrapper.m" // pName
+    "C:\\Users\\alexp\\Documents\\GitHub\\mex_cspice_wrapper_"
+    "example\\wrappers\\spkezr_wrapper.m" // pName
 };
 
 static emlrtRSInfo emlrtRSI{
-    45,                // lineNo
+    54,                // lineNo
     "spkezr_wrapper3", // fcnName
-    "C:\\Users\\alexp\\Documents\\spice_wrapper_example\\wrappers\\spkezr_"
-    "wrapper.m" // pathName
+    "C:\\Users\\alexp\\Documents\\GitHub\\mex_cspice_wrapper_"
+    "example\\wrappers\\spkezr_wrapper.m" // pathName
 };
 
 static emlrtRSInfo b_emlrtRSI{
-    45,                // lineNo
+    54,                // lineNo
     "spkezr_wrapper2", // fcnName
-    "C:\\Users\\alexp\\Documents\\spice_wrapper_example\\wrappers\\spkezr_"
-    "wrapper.m" // pathName
+    "C:\\Users\\alexp\\Documents\\GitHub\\mex_cspice_wrapper_"
+    "example\\wrappers\\spkezr_wrapper.m" // pathName
 };
 
 static emlrtRSInfo c_emlrtRSI{
-    45,                // lineNo
+    54,                // lineNo
     "spkezr_wrapper1", // fcnName
-    "C:\\Users\\alexp\\Documents\\spice_wrapper_example\\wrappers\\spkezr_"
-    "wrapper.m" // pathName
+    "C:\\Users\\alexp\\Documents\\GitHub\\mex_cspice_wrapper_"
+    "example\\wrappers\\spkezr_wrapper.m" // pathName
 };
 
 // Function Declarations
@@ -123,9 +123,7 @@ void spkezr_wrapper1(const emlrtStack *sp,
                      real_T starg[6], real_T *lt)
 {
   static const int32_T iv[2]{1, 1841};
-  static const char_T cv4[7]{"RETURN"};
-  static const char_T cv2[5]{"NULL"};
-  static const char_T cv5[5]{"LONG"};
+  static const char_T cv1[5]{"LONG"};
   coder::array<char_T, 2U> r;
   coder::array<char_T, 2U> r1;
   coder::array<char_T, 2U> r2;
@@ -135,34 +133,17 @@ void spkezr_wrapper1(const emlrtStack *sp,
   const mxArray *y;
   int32_T loop_ub;
   char_T msg[1841];
-  char_T cv3[7];
-  char_T cv1[5];
-  char_T cv[4];
   boolean_T failed;
   st.prev = sp;
   st.tls = sp->tls;
   emlrtHeapReferenceStackEnterFcnR2012b((emlrtCTX)sp);
+  //  Author: Alex Pascarella
+  //  Affiliation: University of Illinois Urbana-Champaign
+  //  Date created: 04/05/2022
   //  Include C files required for code generation
-  //  Set error device
-  cv[0] = 'S';
-  cv[1] = 'E';
-  cv[2] = 'T';
-  cv[3] = '\x00';
-  for (int32_T i{0}; i < 5; i++) {
-    cv1[i] = cv2[i];
-  }
-  errdev_c(&cv[0], MAX_uint8_T, &cv1[0]);
-  //  Set error behavior
-  cv[0] = 'S';
-  cv[1] = 'E';
-  cv[2] = 'T';
-  cv[3] = '\x00';
-  for (int32_T i{0}; i < 7; i++) {
-    cv3[i] = cv4[i];
-  }
-  erract_c(&cv[0], MAX_uint8_T, &cv3[0]);
   //  Preallocate output
   //  Call ephemeris
+  //  Call spkezr_c (query ephemeris)
   r.set_size(&emlrtRTEI, sp, 1, varargin_1.size(1) + 1);
   loop_ub = varargin_1.size(1);
   for (int32_T i{0}; i < loop_ub; i++) {
@@ -188,14 +169,18 @@ void spkezr_wrapper1(const emlrtStack *sp,
   }
   r3[varargin_5.size(1)] = '\x00';
   spkezr_c(&r[0], varargin_2, &r1[0], &r2[0], &r3[0], &starg[0], lt);
-  //  Check for errors
+  //  Call failed_c (check for error)
   failed = failed_c();
   if (failed) {
+    char_T cv[5];
+    //  Call getmsg_c (get error message)
     for (int32_T i{0}; i < 5; i++) {
-      cv1[i] = cv5[i];
+      cv[i] = cv1[i];
     }
-    getmsg_c(&cv1[0], 1841, &msg[0]);
+    getmsg_c(&cv[0], 1841, &msg[0]);
+    //  Call reset_c (reset cspice error state)
     reset_c();
+    //  Rethrow error from Matlab
     y = nullptr;
     m = emlrtCreateCharArray(2, &iv[0]);
     emlrtInitCharArrayR2013a((emlrtCTX)sp, 1841, m, &msg[0]);
@@ -218,7 +203,7 @@ void spkezr_wrapper2(const emlrtStack *sp,
   emlrtStack st;
   const mxArray *m;
   const mxArray *y;
-  int32_T b_i;
+  int32_T i;
   char_T msg[1841];
   char_T cv3[7];
   char_T cv1[5];
@@ -227,46 +212,53 @@ void spkezr_wrapper2(const emlrtStack *sp,
   st.prev = sp;
   st.tls = sp->tls;
   emlrtHeapReferenceStackEnterFcnR2012b((emlrtCTX)sp);
+  //  Author: Alex Pascarella
+  //  Affiliation: University of Illinois Urbana-Champaign
+  //  Date created: 04/05/2022
   //  Include C files required for code generation
-  //  Set error device
-  cv[0] = 'S';
-  cv[1] = 'E';
-  cv[2] = 'T';
-  cv[3] = '\x00';
-  for (int32_T i{0}; i < 5; i++) {
-    cv1[i] = cv2[i];
-  }
-  errdev_c(&cv[0], MAX_uint8_T, &cv1[0]);
-  //  Set error behavior
-  cv[0] = 'S';
-  cv[1] = 'E';
-  cv[2] = 'T';
-  cv[3] = '\x00';
-  for (int32_T i{0}; i < 7; i++) {
-    cv3[i] = cv4[i];
-  }
-  erract_c(&cv[0], MAX_uint8_T, &cv3[0]);
   //  Preallocate output
-  for (b_i = 0; b_i < 6; b_i++) {
-    starg[b_i] = 0.0;
+  for (i = 0; i < 6; i++) {
+    starg[i] = 0.0;
   }
   *lt = 0.0;
   //  Call ephemeris
+  //  Call errdev_c (set error device)
+  cv[0] = 'S';
+  cv[1] = 'E';
+  cv[2] = 'T';
+  cv[3] = '\x00';
+  for (int32_T b_i{0}; b_i < 5; b_i++) {
+    cv1[b_i] = cv2[b_i];
+  }
+  errdev_c(&cv[0], MAX_uint8_T, &cv1[0]);
+  //  Call erract_c (set error behavior)
+  cv[0] = 'S';
+  cv[1] = 'E';
+  cv[2] = 'T';
+  cv[3] = '\x00';
+  for (int32_T b_i{0}; b_i < 7; b_i++) {
+    cv3[b_i] = cv4[b_i];
+  }
+  erract_c(&cv[0], MAX_uint8_T, &cv3[0]);
+  //  Call furnsh_c (load kernel)
   bspfile.set_size(&e_emlrtRTEI, sp, 1, varargin_1.size(1) + 1);
-  b_i = varargin_1.size(1);
-  for (int32_T i{0}; i < b_i; i++) {
-    bspfile[i] = varargin_1[i];
+  i = varargin_1.size(1);
+  for (int32_T b_i{0}; b_i < i; b_i++) {
+    bspfile[b_i] = varargin_1[b_i];
   }
   bspfile[varargin_1.size(1)] = '\x00';
   furnsh_c(&bspfile[0]);
-  //  Check for errors
+  //  Call failed_c (check for error)
   failed = failed_c();
   if (failed) {
-    for (int32_T i{0}; i < 5; i++) {
-      cv1[i] = cv5[i];
+    //  Call getmsg_c (get error message)
+    for (int32_T b_i{0}; b_i < 5; b_i++) {
+      cv1[b_i] = cv5[b_i];
     }
     getmsg_c(&cv1[0], 1841, &msg[0]);
+    //  Call reset_c (reset cspice error state)
     reset_c();
+    //  Rethrow error from Matlab
     y = nullptr;
     m = emlrtCreateCharArray(2, &iv[0]);
     emlrtInitCharArrayR2013a((emlrtCTX)sp, 1841, m, &msg[0]);
@@ -280,54 +272,38 @@ void spkezr_wrapper2(const emlrtStack *sp,
 void spkezr_wrapper3(const emlrtStack *sp, real_T starg[6], real_T *lt)
 {
   static const int32_T iv[2]{1, 1841};
-  static const char_T cv4[7]{"RETURN"};
-  static const char_T cv2[5]{"NULL"};
-  static const char_T cv5[5]{"LONG"};
+  static const char_T cv1[5]{"LONG"};
   emlrtStack st;
   const mxArray *m;
   const mxArray *y;
   char_T msg[1841];
-  char_T cv3[7];
-  char_T cv1[5];
-  char_T cv[4];
   boolean_T failed;
   st.prev = sp;
   st.tls = sp->tls;
+  //  Author: Alex Pascarella
+  //  Affiliation: University of Illinois Urbana-Champaign
+  //  Date created: 04/05/2022
   //  Include C files required for code generation
-  //  Set error device
-  cv[0] = 'S';
-  cv[1] = 'E';
-  cv[2] = 'T';
-  cv[3] = '\x00';
-  for (int32_T i{0}; i < 5; i++) {
-    cv1[i] = cv2[i];
-  }
-  errdev_c(&cv[0], MAX_uint8_T, &cv1[0]);
-  //  Set error behavior
-  cv[0] = 'S';
-  cv[1] = 'E';
-  cv[2] = 'T';
-  cv[3] = '\x00';
-  for (int32_T i{0}; i < 7; i++) {
-    cv3[i] = cv4[i];
-  }
-  erract_c(&cv[0], MAX_uint8_T, &cv3[0]);
   //  Preallocate output
   for (int32_T i{0}; i < 6; i++) {
     starg[i] = 0.0;
   }
   *lt = 0.0;
   //  Call ephemeris
+  //  Call kclear_c (unload all kernels)
   kclear_c();
-  //  Unload kernels
-  //  Check for errors
+  //  Call failed_c (check for error)
   failed = failed_c();
   if (failed) {
+    char_T cv[5];
+    //  Call getmsg_c (get error message)
     for (int32_T i{0}; i < 5; i++) {
-      cv1[i] = cv5[i];
+      cv[i] = cv1[i];
     }
-    getmsg_c(&cv1[0], 1841, &msg[0]);
+    getmsg_c(&cv[0], 1841, &msg[0]);
+    //  Call reset_c (reset cspice error state)
     reset_c();
+    //  Rethrow error from Matlab
     y = nullptr;
     m = emlrtCreateCharArray(2, &iv[0]);
     emlrtInitCharArrayR2013a((emlrtCTX)sp, 1841, m, &msg[0]);

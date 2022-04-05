@@ -6,7 +6,7 @@ ninja_required_version = 1.3
 root = .
 builddir = $root\build\win64
 matlabdir = C:\Program Files\MATLAB\R2022a
-startdir = C:\Users\alexp\Documents\spice_wrapper_example\mex
+startdir = C:\Users\alexp\Documents\GitHub\mex_cspice_wrapper_example\mex
 
 # Toolchain information
 cc = cl
