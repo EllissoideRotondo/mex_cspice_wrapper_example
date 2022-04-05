@@ -1,16 +1,17 @@
-//
-// Student License - for use by students to meet course requirements and
-// perform academic research at degree granting institutions only.  Not
-// for government, commercial, or other organizational use.
-//
-// rtwtypes.h
-//
-// Code generation for function 'spkezr_wrapper1'
-//
+/*
+ * Student License - for use by students to meet course requirements and
+ * perform academic research at degree granting institutions only.  Not
+ * for government, commercial, or other organizational use.
+ *
+ * rtwtypes.h
+ *
+ * Code generation for function 'spkezr_wrapper1'
+ *
+ */
 
 #pragma once
 
-// Include files
+/* Include files */
 #include "tmwtypes.h"
 
 /*
@@ -23,4 +24,4 @@
 #define FALSE (0U)
 #endif
 
-// End of code generation (rtwtypes.h)
+/* End of code generation (rtwtypes.h) */
