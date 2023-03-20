@@ -1,4 +1,4 @@
-function count = ktotal_c(kind) %#codegen
+function count = ktotal(kind) %#codegen
     if coder.target("MATLAB")
         count = cspice_ktotal(kind);
     else
@@ -13,7 +13,7 @@ function count = ktotal_c(kind) %#codegen
         % Check for errors
         if mexspice.failed()
             message = mexspice.getmsg();
-            mexspice.reset_c();
+            mexspice.reset();
             error(message)
         end
     end
