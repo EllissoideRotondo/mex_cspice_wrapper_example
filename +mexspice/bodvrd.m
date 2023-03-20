@@ -1,4 +1,4 @@
-function values = bodvrd_c(bodyName, item, maxSize)
+function values = bodvrd(bodyName, item, maxSize)
         
     % Check target platform
     if coder.target('MATLAB')
@@ -11,12 +11,12 @@ function values = bodvrd_c(bodyName, item, maxSize)
         maxn = uint16(maxSize);
         values = zeros(maxn, 1);
         dim = coder.opaque('int', '0');
-        coder.ceval('bodvrd_c', cstring(bodyName), cstring(item), maxn, coder.wref(dim), coder.wref(values));
+        coder.ceval('bodvrd_c', mexspice.cstring(bodyName), mexspice.cstring(item), maxn, coder.wref(dim), coder.wref(values));
 
         % Check for errors
-        if failed_c()
-            message = getmsg_c();
-            reset_c();
+        if mexspice.failed()
+            message = mexspice.getmsg;
+            mexspice.reset;
             error(message)
         end
     end

@@ -1,4 +1,4 @@
-function [targetState, lightTimeCorrection] = spkezr_c(target, epoch, referenceFrame, aberrationCorrection, observer)    
+function [targetState, lightTimeCorrection] = spkezr(target, epoch, referenceFrame, aberrationCorrection, observer)    
     % Check target platform
     if coder.target('MATLAB')
         [targetState, lightTimeCorrection] = cspice_spkezr(target, epoch, referenceFrame, aberrationCorrection, observer);
@@ -9,13 +9,13 @@ function [targetState, lightTimeCorrection] = spkezr_c(target, epoch, referenceF
         
         % Call ephemeris
         coder.cinclude('SpiceUsr.h');
-        coder.ceval('spkezr_c', cstring(target), epoch, cstring(referenceFrame), ...
-            cstring(aberrationCorrection), cstring(observer), coder.wref(targetState), coder.wref(lightTimeCorrection));
+        coder.ceval('spkezr_c', mexspice.cstring(target), epoch, mexspice.cstring(referenceFrame), ...
+            mexspice.cstring(aberrationCorrection), cstring(observer), coder.wref(targetState), coder.wref(lightTimeCorrection));
     
         % Check for errors
-        if failed_c()
-            message = getmsg_c();
-            reset_c();
+        if mexspice.failed()
+            message = mexspice.getmsg();
+            mexspice.reset();
             error(message)
         end
     end

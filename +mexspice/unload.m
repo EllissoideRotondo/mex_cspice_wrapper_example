@@ -1,4 +1,4 @@
-function [] = unload_c(kernels, folder)    
+function [] = unload(kernels, folder)    
     % Check target platform
     if coder.target('MATLAB')
         for i = 1:length(kernels)
@@ -12,13 +12,13 @@ function [] = unload_c(kernels, folder)
 
         % Iterate over list of kernels
         for i = 1:length(kernels)
-            coder.ceval('unload_c', cstring( [folder, '/', lower( char( string( kernels(i) ) ) )] ) );
+            coder.ceval('unload_c', mexspice.cstring( [folder, '/', lower( char( string( kernels(i) ) ) )] ) );
         end
 
         % Check for errors
-        if failed_c()
-            message = getmsg_c();
-            reset_c();
+        if mexspice.failed()
+            message = mexspice.getmsg();
+            mexspice.reset();
             error(message)
         end
     end

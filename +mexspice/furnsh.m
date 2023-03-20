@@ -1,4 +1,4 @@
-function [] = furnsh_c(kernels, folder)    
+function [] = furnsh(kernels, folder)    
     % Check target platform
     if coder.target('MATLAB')
         for i = 1:length(kernels)
@@ -12,13 +12,13 @@ function [] = furnsh_c(kernels, folder)
 
         % Iterate over list of kernels
         for i = 1:length(kernels)
-            coder.ceval('furnsh_c', cstring( [folder, '/', lower( char( string( kernels(i) ) ) )] ) );
+            coder.ceval('furnsh_c', mexspice.cstring( [folder, '/', lower( char( string( kernels(i) ) ) )] ) );
         end
 
         % Check for errors
-        if failed_c()
-            message = getmsg_c();
-            reset_c();
+        if failed()
+            message = mexspice.getmsg();
+            mexspice.reset();
             error(message)
         end
     end

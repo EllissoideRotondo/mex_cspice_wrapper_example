@@ -1,4 +1,4 @@
-function [] = trcoff_c()
+function [] = trcoff()
     if coder.target("MATLAB")
         return
     else

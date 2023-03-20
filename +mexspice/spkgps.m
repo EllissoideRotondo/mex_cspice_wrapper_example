@@ -1,4 +1,4 @@
-function [targetState, lightTimeCorrection] = spkgps_c(target, epoch, referenceFrame, observer)
+function [targetState, lightTimeCorrection] = spkgps(target, epoch, referenceFrame, observer)
     % Check target platform
     if coder.target('MATLAB')
         [targetState, lightTimeCorrection] = cspice_spkpos( char( string(target) ), epoch, referenceFrame, 'NONE', char( string(observer) ) );
@@ -11,13 +11,13 @@ function [targetState, lightTimeCorrection] = spkgps_c(target, epoch, referenceF
         lightTimeCorrection = 0;
         
         % Call ephemeris
-        coder.ceval('spkgps_c', uint16(target), epoch, cstring(referenceFrame), ...
+        coder.ceval('spkgps_c', uint16(target), epoch, mexspice.cstring(referenceFrame), ...
                         uint16(observer), coder.wref(targetState), coder.wref(lightTimeCorrection));
     
         % Check for errors
-        if failed_c()
-            message = getmsg_c();
-            reset_c();
+        if mexspice.failed()
+            message = mexspice.getmsg();
+            mexspice.reset();
             error(message)
         end
     end
