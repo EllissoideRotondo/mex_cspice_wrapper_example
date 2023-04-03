@@ -1,22 +1,17 @@
-function [] = furnsh(kernels, folder)    
+function [] = furnsh(kernel)    
     % Check target platform
     if coder.target('MATLAB')
-        for i = 1:length(kernels)
-            filePath = fullfile( getEphemerisFolder(), lower(kernels(i).char) );
-            cspice_furnsh(filePath);
-        end
+        cspice_furnsh(kernel);
 
     else
         % Include header
         coder.cinclude('SpiceUsr.h')
 
         % Iterate over list of kernels
-        for i = 1:length(kernels)
-            coder.ceval('furnsh_c', mexspice.cstring( [folder, '/', lower( char( string( kernels(i) ) ) )] ) );
-        end
+        coder.ceval( 'furnsh_c', mexspice.cstring(kernel) )
 
         % Check for errors
-        if failed()
+        if mexspice.failed()
             message = mexspice.getmsg();
             mexspice.reset();
             error(message)

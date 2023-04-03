@@ -1,8 +1,6 @@
 function et = str2et(string)
     if coder.target('MATLAB')
-        furnsh_c(Ephemeris.NAIF0012)
         et = cspice_str2et(string);
-        unload_c(Ephemeris.NAIF0012)
     else
         % Include header
         coder.cinclude('SpiceUsr.h')
