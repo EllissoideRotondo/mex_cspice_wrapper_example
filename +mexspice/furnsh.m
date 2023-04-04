@@ -8,7 +8,7 @@ function [] = furnsh(kernel)
         coder.cinclude('SpiceUsr.h')
 
         % Iterate over list of kernels
-        coder.ceval( 'furnsh_c', mexspice.cstring(kernel) )
+        coder.ceval( 'furnsh_c', mexspice.cstring(kernel) );
 
         % Check for errors
         if mexspice.failed()
