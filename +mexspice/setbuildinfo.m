@@ -25,7 +25,7 @@ function [] = setbuildinfo(buildInfo)
     % - initial version (11.05.2022 - po)
 
     % Library paths
-    [include_path, source_path, lib_path, lib_name] = build.getlibpath();
+    [include_path, source_path, lib_path, lib_name] = mexspice.getlibpath();
     buildInfo.addIncludePaths(include_path);
     buildInfo.addIncludePaths(source_path);
     buildInfo.addLinkObjects(lib_name, lib_path, '', true, true);
