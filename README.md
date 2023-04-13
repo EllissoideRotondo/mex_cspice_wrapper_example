@@ -1,2 +1,2 @@
 # mexspice
-mexspice is a set of MATLAB wrappers that allows to call functions from the NAIF C SPICE Toolkit (N66) within a function intended for code generation (MEX), which is not currently supported in the official NAIF MICE Toolkit.
+mexspice is a suite of MATLAB wrappers that enables calling NAIF CSPICE functions within a MATLAB function intended for code generation (MEX), a functionality currently not supported in the official NAIF MICE Toolkit.
