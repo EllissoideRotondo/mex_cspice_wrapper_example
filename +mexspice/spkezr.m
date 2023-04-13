@@ -1,7 +1,7 @@
 function [targetState, lightTimeCorrection] = spkezr(target, epoch, referenceFrame, aberrationCorrection, observer)    
     % Check target platform
     if coder.target('MATLAB')
-        [targetState, lightTimeCorrection] = cspice_spkezr(target, epoch, referenceFrame, aberrationCorrection, observer);
+        [targetState, lightTimeCorrection] = cspice_spkezr(target, epoch(:)', referenceFrame, aberrationCorrection, observer);
     else
         % Preallocate output
         targetState = zeros(6, 1);
