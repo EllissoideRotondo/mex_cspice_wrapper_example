@@ -1,4 +1,4 @@
-function [] = kclear_c() %#codegen
+function [] = kclear() %#codegen
     if coder.target("MATLAB")
         cspice_kclear()
     else

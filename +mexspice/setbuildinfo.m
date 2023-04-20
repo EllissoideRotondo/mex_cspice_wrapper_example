@@ -1,4 +1,4 @@
-function [] = setSpiceBuildInfo(buildInfo)
+function [] = setbuildinfo(buildInfo)
     % Update buildInfo object to include CSPICE library
     %% Description:
     %   This function updates a BuildInfo object by including the CSPICE 
@@ -20,15 +20,17 @@ function [] = setSpiceBuildInfo(buildInfo)
     %
     %   Copyright (c) 2022 Alex Pascarella.
     %
-    %   This file is part of Astromancer.
     %
     %% ToDo / Changelog
     % - initial version (11.05.2022 - po)
 
-    [includePath, sourcePath, libPath, libName] = build.getSpiceLibraryPath();
-    buildInfo.addIncludePaths(includePath);
-    buildInfo.addIncludePaths(sourcePath);
-    buildInfo.addLinkObjects(libName, libPath, '', true, true);
+    % Library paths
+    [include_path, source_path, lib_path, lib_name] = mexspice.getlibpath();
+    buildInfo.addIncludePaths(include_path);
+    buildInfo.addIncludePaths(source_path);
+    buildInfo.addLinkObjects(lib_name, lib_path, '', true, true);
+
+    % Additional flag for Windows systems
     if ispc
         buildInfo.addLinkFlags('/NODEFAULTLIB:libcmt');
     end
